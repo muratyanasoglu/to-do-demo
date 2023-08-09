@@ -23,30 +23,34 @@ class Header extends React.Component {
   render() {
     const { darkMode } = this.state;
     return (
-      <div className={`header-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
-        <header className="header-section">
-          <div className="date-time-section">
-            <DatePicker defaultValue={moment()} />
-            <TimePicker defaultValue={moment()} format="HH:mm" />
-          </div>
-          <div className="title-section">
-            <Typography.Title level={1} className="animated-title">
-              Projects <span className="highlight">Demo</span> Page
-            </Typography.Title>
-          </div>
-          <div className="button-section">
-            <Button icon={<GlobalOutlined />}>TR | EN</Button>
-            <Switch
-              checkedChildren={<BulbOutlined />}
-              unCheckedChildren={<BulbOutlined />}
-              checked={darkMode}
-              onChange={this.toggleTheme}
-            />
-          </div>
-        </header>
-        <Accordions />
-        <Tables />
-        <ProjectStatus />
+      <div className="container">
+        <div className={`header-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+          <header className="header-section">
+            <div className="date-time-section">
+              <DatePicker defaultValue={moment()} />
+              <TimePicker defaultValue={moment()} format="HH:mm" />
+            </div>
+            <div className="title-section">
+              <Typography.Title level={1} className="animated-title">
+                Projects <span className="highlight">Demo</span> Page
+              </Typography.Title>
+            </div>
+            <div className="button-section">
+              <Button icon={<GlobalOutlined />}>TR | EN</Button>
+              <Switch
+                checkedChildren={<BulbOutlined />}
+                unCheckedChildren={<BulbOutlined />}
+                checked={darkMode}
+                onChange={this.toggleTheme}
+              />
+            </div>
+
+
+          </header>
+          <Accordions />
+          <Tables />
+          <ProjectStatus />
+        </div>
       </div>
     );
   }

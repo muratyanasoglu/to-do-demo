@@ -16,28 +16,29 @@ const Tables = () => {
     ];
 
     return (
-        <div className="tables-container">
-            <div className="top-tables">
-                <div className="table-container">
-                    <h2>To-do List</h2>
+        <div className="container">
+            <div className="tables-container">
+                <div className="top-tables">
+                    <div className="table-container">
+                        <h2>To-do List</h2>
+                        <Table columns={columns} dataSource={data} />
+                    </div>
+                    <div className="table-container">
+                        <h2>Demos</h2>
+                        <Table columns={columns} dataSource={data} />
+                    </div>
+                    <div className="table-container">
+                        <h2>Clones</h2>
+                        <Table columns={columns} dataSource={data} />
+                    </div>
+                </div>
+                <div className="main-project-table">
+                    <h2>The Main Project</h2>
                     <Table columns={columns} dataSource={data} />
                 </div>
-                <div className="table-container">
-                    <h2>Demos</h2>
-                    <Table columns={columns} dataSource={data} />
-                </div>
-                <div className="table-container">
-                    <h2>Clones</h2>
-                    <Table columns={columns} dataSource={data} />
-                </div>
+                <Graphic /> {/* Add this line to include the graphic and contributors list */}
             </div>
-            <div className="main-project-table">
-                <h2>The Main Project</h2>
-                <Table columns={columns} dataSource={data} />
-            </div>
-            <Graphic /> {/* Add this line to include the graphic and contributors list */}
         </div>
-
     );
 };
 

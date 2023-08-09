@@ -204,3 +204,10 @@
   font-weight: bold;
 }
 
+.container {
+  padding: 20px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255); /* Optional: Set a background color */
+  box-shadow: 0 4px 8px rgb(39, 215, 12); /* Optional: Add a shadow for depth */
+}
+

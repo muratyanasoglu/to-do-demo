@@ -33,18 +33,20 @@ const Graphic = () => {
   };
 
   return (
-    <div className="graphic-container">
-      <div className="chart-section">
-        <Line {...chartConfig} /> {/* Use the Line chart here */}
-      </div>
-      <div className="contributors-section">
-        <Typography.Title level={3}>The Most Contributors to the Projects</Typography.Title>
-        <List
-          size="small"
-          bordered
-          dataSource={contributors}
-          renderItem={(item) => <List.Item>{item}</List.Item>}
-        />
+    <div className="container">
+      <div className="graphic-container">
+        <div className="chart-section">
+          <Line {...chartConfig} /> {/* Use the Line chart here */}
+        </div>
+        <div className="contributors-section">
+          <Typography.Title level={3}>The Most Contributors to the Projects</Typography.Title>
+          <List
+            size="small"
+            bordered
+            dataSource={contributors}
+            renderItem={(item) => <List.Item>{item}</List.Item>}
+          />
+        </div>
       </div>
     </div>
   );
