@@ -1,17 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import Header from './components/header';
+import './components/style.css';
+import Notification from './components/Notification';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class App extends React.Component {
+    state = {
+        darkMode: false,
+    };
+
+    toggleTheme = () => {
+        this.setState({ darkMode: !this.state.darkMode });
+    };
+
+    componentDidMount() {
+        // Example: Notify users of an upcoming deadline when the component mounts
+        Notification('warning', 'Deadline Approaching', 'Your project deadline is in 3 days.');
+    }
+    render() {
+        const themeStyle = {
+            backgroundColor: this.state.darkMode ? 'black' : 'white',
+            color: this.state.darkMode ? 'white' : 'black',
+        };
+
+        return (
+            <div className="app" style={themeStyle}>
+                <Header darkMode={this.state.darkMode} toggleTheme={this.toggleTheme} />
+                {/* Other components will go here */}
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
